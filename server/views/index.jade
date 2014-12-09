@@ -1,0 +1,8 @@
+extends ./layouts/application.jade
+
+block content
+    | Hey there, #{title}!
+
+block reactScript
+    //- Build
+    script(type='text/javascript', src="./dist/components.js")

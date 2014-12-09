@@ -1,0 +1,33 @@
+{
+  "name": "wengum",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Taskworld"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "boom": "^2.6.0",
+    "good": "^4.0.0",
+    "good-console": "^2.1.0",
+    "hapi": "^7.5.2",
+    "hapi-named-routes": "^0.2.0",
+    "jade": "^1.7.0",
+    "jquery": "^2.1.1",
+    "lodash": "^2.4.1",
+    "react": "^0.12.1",
+    "react-bootstrap": "^0.13.0",
+    "reactify": "^0.17.1",
+    "reflux": "^0.2.0",
+    "require-directory": "^2.0.0",
+    "vinyl-source-stream": "^1.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^6.3.2",
+    "gulp": "^3.8.10",
+    "gulp-nodemon": "^1.0.4"
+  }
+}

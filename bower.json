@@ -1,0 +1,36 @@
+{
+  "name": "academy-blue",
+  "version": "1.0.0",
+  "homepage": "https://github.com/taskworld/academy-blue",
+  "authors": [
+    "Blue Label Team"
+  ],
+  "description": "Assessment 1: Building a Simple task management web application",
+  "main": "index.js",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "Taskworld",
+    "Academy",
+    "Assessment"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "bootstrap": "~3.3.1",
+    "bootstrap-material-design": "~0.1.6",
+    "animate.css": "~3.2.0"
+  }
+}
