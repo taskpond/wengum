@@ -8,5 +8,15 @@ module.exports = {
         app: {
             name: 'index'
         }
+    },
+    welcome: {
+        handler: function(request, reply) {
+            reply.view('./welcome', {
+                title: 'Wengum'
+            });
+        },
+        app: {
+            name: 'welcome'
+        }
     }
 }

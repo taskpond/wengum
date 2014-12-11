@@ -7,6 +7,10 @@ module.exports = [{
         config: controller.applicationController.index
     }, {
         method: 'GET',
+        path: '/welcome',
+        config: controller.applicationController.welcome
+    }, {
+        method: 'GET',
         path: '/images/{path*}',
         config: controller.assetsController.images
     }, {

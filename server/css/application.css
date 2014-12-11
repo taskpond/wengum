@@ -78,9 +78,9 @@ img {
 }
 
 .main{
-  -webkit-box-shadow: 0 -30px 30px -4px #999,-6px 0 4px -4px #f2f2f2;
+  /*-webkit-box-shadow: 0 -30px 30px -4px #999,-6px 0 4px -4px #f2f2f2;
   -moz-box-shadow: 0 -30px 30px -4px #999,-6px 0 4px -4px #f2f2f2;
-  box-shadow: 0 -30px 30px -4px #999,-6px 0 4px -4px #f2f2f2;
+  box-shadow: 0 -30px 30px -4px #999,-6px 0 4px -4px #f2f2f2;*/
   margin: 116px auto 0 auto;
   max-width: 1600px;
   position: relative;
@@ -232,7 +232,7 @@ img {
   right: 0;
 }
 
-.carousel-nav>div.maia-col-12 {
+.carousel-nav div.maia-col-12 {
   margin-bottom: 0;
 }
 

@@ -4,7 +4,7 @@ var Content = require('./Content.react');
 var WengumPage = React.createClass({
   render: function(){
     return (
-      <div>
+      <div className="wrapper">
         <Content />
       </div>
     );

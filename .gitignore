@@ -23,3 +23,7 @@ node_modules
 tmp
 bower_components
 components
+
+.idea
+dist
+server/dist

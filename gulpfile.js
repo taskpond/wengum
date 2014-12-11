@@ -5,12 +5,21 @@ var reactify = require('reactify');
 var browserify = require('browserify');
 
 // Basic usage
-gulp.task('browserify', function() {
+gulp.task('browserify', ['browserify-wengum'], function() {
     var b = browserify();
     b.transform(reactify); // use the reactify transform
     b.add('./server/js/application.js');
     return b.bundle()
         .pipe(source('components.js'))
+        .pipe(gulp.dest('./server/dist'));
+});
+
+gulp.task('browserify-wengum', function() {
+    var b = browserify();
+    b.transform(reactify); // use the reactify transform
+    b.add('./server/js/WelcomePage.js');
+    return b.bundle()
+        .pipe(source('WelcomeComponents.js'))
         .pipe(gulp.dest('./server/dist'));
 });
 
@@ -26,4 +35,9 @@ gulp.task('nodemon', ['browserify'], function() {
 // Restart the server for changes.
 gulp.task('default', ['nodemon'], function() {
     gulp.watch(['./server/js/**', './server/css/**'], ['browserify']);
+});
+
+// Restart the server for changes.
+gulp.task('wengum', ['nodemon'], function() {
+    gulp.watch(['./server/reactComponents/**', './server/css/**'], ['browserify-wengum']);
 });
