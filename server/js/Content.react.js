@@ -2,6 +2,7 @@ var React = require('react');
 var Reflux = require('reflux');
 var WengumAction = require('../actions/WengumActions');
 var WengumStore = require('../stores/WengumStore');
+var _ = require('lodash');
 
 var Content = React.createClass({
 
@@ -38,7 +39,7 @@ var Content = React.createClass({
 
   _onChange: function(cb){
     var $nextItem = null, $nextBG = null, $nextCircle = null;
-
+    var $section = $('.main .section');
     switch(cb.state){
       case 'next':
         // Background
@@ -74,8 +75,21 @@ var Content = React.createClass({
         $nextCircle.addClass('active');
         break;
       case 'click':
-        var $section = $('.main .section');
         var itemIndex = $(cb.id).index();
+        $section.find('.active').toggleClass('active');
+        $section.find('[data-index="'+itemIndex+'"]').addClass('active');
+
+        $('.carousel-bg').css('left', '-' + $('.carousel-bg .active').css('left'));
+        $('.carousel-content').css('left', '-' + $('.carousel-content .active').css('left'));
+        break;
+      case 'index':
+        var itemIndex = cb.index;
+        if(_.isEqual($section.find('.active').first().next().index(), -1)){
+          itemIndex = 0;
+        }
+        else{
+          ++itemIndex;
+        }
         $section.find('.active').toggleClass('active');
         $section.find('[data-index="'+itemIndex+'"]').addClass('active');
 
@@ -90,7 +104,8 @@ var Content = React.createClass({
     e.preventDefault();
     $target = $(e.target);
     if($target.hasClass('carousel-next') || $target.hasClass('next-arrow')){
-      WengumAction.next();
+      // WengumAction.next();
+      WengumAction.goToIndex($('.pagination-circle-container .active').index());
     }
     else if($target.hasClass('circle')){
       WengumAction.goTo($target.attr('href'));
@@ -104,10 +119,18 @@ var Content = React.createClass({
         <div className="main shadow-z-2">
           <div className="section sub shadow-z-2">
             <div className="carousel-bg">
-              <div className="carousel-bg-item carousel-bg-digitize-01 active" data-index="0"></div>
-              <div className="carousel-bg-item carousel-bg-digitize-02" data-index="1"></div>
-              <div className="carousel-bg-item carousel-bg-digitize-03" data-index="2"></div>
-              <div className="carousel-bg-item carousel-bg-digitize-04" data-index="3"></div>
+              <div className="carousel-bg-item active" data-index="0">
+                <img src="./images/bg-creation-01.jpg" />
+              </div>
+              <div className="carousel-bg-item" data-index="1">
+                <img src="./images/bg-creation-02.jpg" />
+              </div>
+              <div className="carousel-bg-item" data-index="2">
+                <img src="./images/bg-creation-03.jpg" />
+              </div>
+              <div className="carousel-bg-item" data-index="3">
+                <img src="./images/bg-creation-04.jpg" />
+              </div>
             </div>
             <div className="container">
               <div className="content-container shadow-z-2">

@@ -15,6 +15,10 @@ var WengumStore = Reflux.createStore({
         this.update({state: 'click', id: id});
     },
 
+    onGoToIndex: function(index){
+        this.update({state: 'index', index: index});
+    },
+
     update: function(state) {
         this.trigger(state);
     }

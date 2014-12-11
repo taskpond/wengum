@@ -2,7 +2,8 @@ var Reflux = require('reflux');
 
 var WengumActions = Reflux.createActions([
   'next',
-  'goTo'
+  'goTo',
+  'goToIndex'
 ]);
 
 module.exports = WengumActions;
