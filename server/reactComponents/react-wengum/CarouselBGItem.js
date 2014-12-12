@@ -4,11 +4,8 @@ var WengumStore = require('./stores/WengumStore');
 var _ = require('lodash');
 
 var CarouselBGItem = React.createClass({
-  mixins: [Reflux.ListenerMixin],
 
-  propTypes: {
-    children: React.PropTypes.element.isRequired
-  },
+  mixins: [Reflux.ListenerMixin],
 
   componentDidMount: function() {
     this._initWengum();

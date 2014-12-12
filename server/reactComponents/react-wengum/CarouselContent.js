@@ -8,10 +8,6 @@ var CarouselContent = React.createClass({
 
   mixins: [Reflux.ListenerMixin],
 
-  propTypes: {
-    children: React.PropTypes.element.isRequired
-  },
-
   componentDidMount: function() {
     this._initWengum();
     this.listenTo(WengumStore, this._onChange);

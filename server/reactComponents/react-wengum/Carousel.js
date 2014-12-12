@@ -1,9 +1,6 @@
 var React = require('react');
 
 var Carousel = React.createClass({
-  propTypes: {
-    children: React.PropTypes.element.isRequired
-  },
   render: function(){
     return (
       <div className="main">
